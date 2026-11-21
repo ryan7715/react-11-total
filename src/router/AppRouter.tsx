@@ -1,5 +1,4 @@
-
-import { createBrowserRouter, type RouteObject } from "react-router";
+import {createBrowserRouter, type RouteObject} from "react-router";
 
 import MainLayout from "../layouts/MainLayout.tsx";
 
@@ -12,23 +11,24 @@ import Product from "../pages/Product.tsx";
 import Board from "../pages/Board.tsx";
 
 const AppRouter = () => {
-  const routes: RouteObject[] = [
-    {
-      path: "/",
-      element: <MainLayout />,
-      children: [
-        { index: true, element: <Home /> },
-        { path: "todo", element: <TodoList /> },
-        { path: "coin", element: <CoinTracker /> },
-        { path: "movie", element: <Movie /> },
-        { path: "books", element: <Books /> },
-        { path: "product", element: <Product /> },
-        { path: "board", element: <Board /> },
-      ],
-    },
-  ];
+    const routes: RouteObject[] = [
+        {
+            path: "/",
+            element: <MainLayout/>,
+            children: [
+                {index: true, element: <Home/>},
+                {path: "todo", element: <TodoList/>},
+                {path: "coin", element: <CoinTracker/>},
+                {path: "movie", element: <Movie/>},
+                {path: "books", element: <Books/>},
+                {path: "product", element: <Product/>},
+                {path: "board", element: <Board/>},
+                {path: "board/:id", element: <Board/>},
+            ],
+        },
+    ];
 
-  return createBrowserRouter(routes);
+    return createBrowserRouter(routes);
 };
 
 export default AppRouter;
